@@ -59,6 +59,16 @@ func NewTerminfoScreenFromTty(tty Tty) (Screen, error) {
 		}
 		terminfo.AddTerminfo(ti)
 	}
+	if vteVersion := os.Getenv("VTE_VERSION"); vteVersion != "" && ti.Hyperlink == "" && ti.StringTerminator == "" {
+		v, err := strconv.Atoi(vteVersion)
+		if err == nil && v > 5000 {
+			// hyperlinks are supported in VTE-based terminal on VTE >= 0.50.0.
+			// some terminals do not support it even when VTE does, but they will ignore the escape code in those cases.
+			// see https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda#terminal-emulators
+			ti.Hyperlink = "\x1b]8;;"
+			ti.StringTerminator = "\x1b\\"
+		}
+	}
 	t := &tScreen{ti: ti, tty: tty}
 
 	t.keyexist = make(map[Key]bool)
