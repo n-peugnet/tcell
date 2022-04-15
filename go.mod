@@ -1,12 +1,14 @@
 module go.mau.fi/tcell
 
-go 1.12
+go 1.17
 
 require (
 	github.com/gdamore/encoding v1.0.0
 	github.com/lucasb-eyer/go-colorful v1.2.0
 	github.com/mattn/go-runewidth v0.0.13
-	golang.org/x/sys v0.0.0-20220318055525-2edf467146b5
-	golang.org/x/term v0.0.0-20201210144234-2321bbc49cbf
+	golang.org/x/sys v0.0.0-20220412211240-33da011f77ad
+	golang.org/x/term v0.0.0-20220411215600-e5f449aeb171
 	golang.org/x/text v0.3.7
 )
+
+require github.com/rivo/uniseg v0.2.0 // indirect
