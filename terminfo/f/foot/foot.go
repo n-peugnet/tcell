@@ -66,5 +66,8 @@ func init() {
 		KeyBacktab:    "\x1b[Z",
 		Modifiers:     1,
 		AutoMargin:    true,
+
+		Hyperlink:        "\x1b]8;;",
+		StringTerminator: "\x1b\\",
 	})
 }

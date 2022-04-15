@@ -58,6 +58,17 @@ func LookupTerminfo(name string) (ti *terminfo.Terminfo, e error) {
 		terminfo.AddTerminfo(ti)
 	}
 
+	if vteVersion := os.Getenv("VTE_VERSION"); vteVersion != "" && ti.Hyperlink == "" && ti.StringTerminator == "" {
+		v, err := strconv.Atoi(vteVersion)
+		if err == nil && v > 5000 {
+			// hyperlinks are supported in VTE-based terminal on VTE >= 0.50.0.
+			// some terminals do not support it even when VTE does, but they will ignore the escape code in those cases.
+			// see https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda#terminal-emulators
+			ti.Hyperlink = "\x1b]8;;"
+			ti.StringTerminator = "\x1b\\"
+		}
+	}
+
 	return
 }
 
@@ -748,6 +759,11 @@ func (t *tScreen) drawCell(x, y int) int {
 		}
 		if attrs&AttrStrikeThrough != 0 {
 			t.TPuts(ti.StrikeThrough)
+		}
+		if style.hyperlink != "" && ti.Hyperlink != "" {
+			t.TPuts(ti.Hyperlink + style.hyperlink + ti.StringTerminator)
+		} else if t.curstyle.hyperlink != "" && ti.Hyperlink != "" {
+			t.TPuts(ti.Hyperlink + ti.StringTerminator)
 		}
 		t.curstyle = style
 	}
