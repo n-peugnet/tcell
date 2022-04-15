@@ -1,3 +1,4 @@
+//go:build ignore
 // +build ignore
 
 // Copyright 2021 The TCell Authors
@@ -42,7 +43,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/gdamore/tcell/v2/terminfo"
+	"go.mau.fi/tcell/terminfo"
 )
 
 type termcap struct {
@@ -622,7 +623,7 @@ func dotGoInfo(w io.Writer, terms []*TData) {
 }
 
 var packname = ""
-var tipackname = "github.com/gdamore/tcell/v2/terminfo"
+var tipackname = "go.mau.fi/tcell/terminfo"
 
 func dotGoFile(fname string, terms []*TData) error {
 	w := os.Stdout

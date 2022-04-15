@@ -17,7 +17,7 @@ package views
 import (
 	"sync"
 
-	"github.com/gdamore/tcell/v2"
+	"go.mau.fi/tcell"
 )
 
 // Application represents an event-driven application running on a screen.

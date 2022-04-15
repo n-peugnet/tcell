@@ -15,7 +15,7 @@
 package views
 
 import (
-	"github.com/gdamore/tcell/v2"
+	"go.mau.fi/tcell"
 )
 
 // View represents a logical view on an area.  It will have some underlying

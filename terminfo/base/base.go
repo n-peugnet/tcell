@@ -24,9 +24,9 @@ package base
 import (
 	// The following imports just register themselves --
 	// thse are the terminal types we aggregate in this package.
-	_ "github.com/gdamore/tcell/v2/terminfo/a/ansi"
-	_ "github.com/gdamore/tcell/v2/terminfo/v/vt100"
-	_ "github.com/gdamore/tcell/v2/terminfo/v/vt102"
-	_ "github.com/gdamore/tcell/v2/terminfo/v/vt220"
-	_ "github.com/gdamore/tcell/v2/terminfo/x/xterm"
+	_ "go.mau.fi/tcell/terminfo/a/ansi"
+	_ "go.mau.fi/tcell/terminfo/v/vt100"
+	_ "go.mau.fi/tcell/terminfo/v/vt102"
+	_ "go.mau.fi/tcell/terminfo/v/vt220"
+	_ "go.mau.fi/tcell/terminfo/x/xterm"
 )

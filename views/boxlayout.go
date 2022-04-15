@@ -15,7 +15,7 @@
 package views
 
 import (
-	"github.com/gdamore/tcell/v2"
+	"go.mau.fi/tcell"
 )
 
 // BoxLayout is a container Widget that lays out its child widgets in

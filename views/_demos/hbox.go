@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/gdamore/tcell/v2"
-	"github.com/gdamore/tcell/v2/views"
+	"go.mau.fi/tcell"
+	"go.mau.fi/tcell/views"
 )
 
 type boxL struct {

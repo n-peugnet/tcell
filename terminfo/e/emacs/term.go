@@ -2,7 +2,7 @@
 
 package emacs
 
-import "github.com/gdamore/tcell/v2/terminfo"
+import "go.mau.fi/tcell/terminfo"
 
 func init() {
 

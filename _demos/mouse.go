@@ -25,8 +25,8 @@ import (
 	"os/exec"
 	"runtime"
 
-	"github.com/gdamore/tcell/v2"
-	"github.com/gdamore/tcell/v2/encoding"
+	"go.mau.fi/tcell"
+	"go.mau.fi/tcell/encoding"
 
 	"github.com/mattn/go-runewidth"
 )
@@ -206,7 +206,7 @@ func main() {
 				if err := s.Suspend(); err == nil {
 					fmt.Printf("Executing shell (%s -l)...\n", shell)
 					fmt.Printf("Exit the shell to return to the demo.\n")
-					c := exec.Command(shell, "-l" ) // NB: -l works for cmd.exe too (ignored)
+					c := exec.Command(shell, "-l") // NB: -l works for cmd.exe too (ignored)
 					c.Stdin = os.Stdin
 					c.Stdout = os.Stdout
 					c.Stderr = os.Stderr

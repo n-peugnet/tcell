@@ -1,3 +1,4 @@
+//go:build ignore
 // +build ignore
 
 // Copyright 2016 The Tcell Authors
@@ -20,8 +21,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/gdamore/tcell/v2"
-	"github.com/gdamore/tcell/v2/views"
+	"go.mau.fi/tcell"
+	"go.mau.fi/tcell/views"
 )
 
 var app = &views.Application{}

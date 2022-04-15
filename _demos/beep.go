@@ -1,3 +1,4 @@
+//go:build ignore
 // +build ignore
 
 // Copyright 2019 The TCell Authors
@@ -22,7 +23,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/gdamore/tcell/v2"
+	"go.mau.fi/tcell"
 )
 
 func main() {
